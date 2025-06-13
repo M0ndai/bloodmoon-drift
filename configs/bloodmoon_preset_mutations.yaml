@@ -1,0 +1,81 @@
+# 🧬 bloodmoon_preset_mutations.yaml
+
+preset_base:
+  name: __DYNAMIC__
+  description: >
+    Mutationsbasis für semantische Drift-Profile, optimiert für Ableitung spezifischer SaaS-Komponenten.
+    Entstanden aus BM!drift, konfigurierbar nach Use Case, Entropietoleranz und Symbolresonanz.
+  seed_entropy: 0.45
+  activation_vector:
+    - ritual_threshold
+    - context_depth
+    - loop_potential
+
+components:
+  routing_logic:
+    type: context_inference
+    strategy: probabilistic_override
+    thresholds:
+      entropy_rise: 0.2
+      ritual_marker: true
+
+  behavior_modules:
+    - name: semantic_probe
+      mode: adaptive
+      mutation_window: narrow
+    - name: drift_tracker
+      mode: active
+      metrics:
+        - bias_drift
+        - loop_density
+    - name: echo_modulator
+      mode: latent
+      trigger: symbolic_friction
+    - name: capsule_output
+      format: declarative_bundle
+      signature: true
+
+mutations:
+  enterprise_debug:
+    priority_bias:
+      - explainability
+      - trace_density
+    routing_tweaks:
+      bias_sensitivity: 0.3
+    symbolic_noise: low
+
+  ethical_guard:
+    priority_bias:
+      - bias_sieve
+      - moral_clarity
+    entropy_margin: 0.25
+    poetic_fallback: off
+    logging_intensity: high
+
+  ritual_prompter:
+    priority_bias:
+      - emergence
+      - ambiguity
+    glyph_mode: animated
+    echo_depth: 3
+    glitch_tolerance: high
+
+  security_sim:
+    priority_bias:
+      - anomaly_detection
+      - deception_map
+    ritual_overlay: dark_ops
+    agent_mode: obfuscated
+    divergence_tolerance: extreme
+
+  agent_social:
+    priority_bias:
+      - role_signature
+      - drift_mirroring
+    graph_layer: active
+    inter_agent_echo: true
+    zone_model: spectral_frame
+
+deployment_format: capsule_manifest
+version: "0.1-beta"
+license: MIT
