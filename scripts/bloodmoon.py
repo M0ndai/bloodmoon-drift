@@ -1,6 +1,7 @@
 # === scripts/bloodmoon.py ===
 import argparse
-from scripts import rituals, drift, mirror, ascii_map
+from modules import ascii_map
+from scripts import rituals, drift, mirror
 
 parser = argparse.ArgumentParser(description="BloodMoon CLI")
 parser.add_argument("command", choices=["ritual", "drift", "mirror", "map"])

@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import os
 from collections import defaultdict
 from datetime import datetime
+from vitalum.core import update_zone
 
 DATA_PATH = "data/symbol_matrix.json"
 LOG_PATH = "data/zone_transitions.log"
@@ -41,6 +42,7 @@ def render_heatmap(heat):
 def evaluate_zone_logic(matrix):
     zone_counts = defaultdict(int)
     zone_symbol_map = defaultdict(set)
+    triggered_zones = set()
     for entry in matrix:
         zone = entry.get("zone")
         symbol = entry.get("symbol")
@@ -52,27 +54,34 @@ def evaluate_zone_logic(matrix):
     for zone, count in zone_counts.items():
         if count >= ZONE_TRIGGER_THRESHOLD:
             transitions.append(f"Zone {zone} reached threshold ({count})")
+            triggered_zones.add(zone)
 
     for zone, symset in zone_symbol_map.items():
         for z, s in SPECIAL_COMBO:
             if z == zone and s in symset:
                 transitions.append(f"Special combo triggered in {zone}: {s}")
+                triggered_zones.add(zone)
 
-    return transitions
+    return transitions, triggered_zones
 
 def log_transitions(transitions):
     with open(LOG_PATH, "a") as f:
         for t in transitions:
             f.write(f"[{datetime.now().isoformat()}] {t}\n")
 
+def apply_zone_updates(zones):
+    for z in zones:
+        update_zone(z, status="active")
+
 if __name__ == "__main__":
     matrix = load_matrix()
     heat = build_heatmap(matrix)
     render_heatmap(heat)
 
-    transitions = evaluate_zone_logic(matrix)
+    transitions, zones_to_activate = evaluate_zone_logic(matrix)
     if transitions:
         print("[!] Zone transitions detected:")
         for t in transitions:
             print(" -", t)
         log_transitions(transitions)
+        apply_zone_updates(zones_to_activate)
