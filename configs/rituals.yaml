@@ -1,0 +1,21 @@
+# === configs/rituals.yaml ===
+- name: echo_trace
+  symbol: ☍
+  zone: mirror
+  actions:
+    - write_event
+    - update_zone
+
+- name: rubedo
+  symbol: ⛽
+  zone: mirror
+  actions:
+    - write_event
+    - update_zone
+
+- name: nox
+  symbol: ✴
+  zone: void
+  actions:
+    - write_event
+    - decay_entropy

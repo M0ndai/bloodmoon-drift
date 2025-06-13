@@ -1,0 +1,15 @@
+# === configs/modules.yaml ===
+- name: mirror
+  trigger: always
+  mode:
+    passive: true
+
+- name: seer
+  trigger: symbol == ⛽
+  mode:
+    analysis: true
+
+- name: drift
+  trigger: pulse_changed
+  mode:
+    monitor: true

@@ -95,3 +95,30 @@ BlutMond sagt:
 „Wenn alles driftet, ist wenigstens dein README stabil.“
 
 ---
+
+
+# 🔴 BLOODMOON-DRIFT
+
+> Reflexives Handlungssystem für symbolische Interaktion, Drift-Tracking & rituelle Transformation
+
+## Einstieg
+```bash
+python scripts/rituals.py
+```
+
+## Struktur
+- `scripts/`: Handlungseinheiten (Rituale)
+- `events/`: Logging auf Symbolbasis
+- `vitalum/`: Zustandskern
+- `configs/`: YAML-gesteuerte Semantik
+- `logs.jl`: Chronik
+- `vitalum.snapshot.json`: Systemzustand
+
+## Status
+Aktiv. Beobachtet. Erwartet dein Symbol.
+
+
+# === LICENSE ===
+MIT License
+
+Copyright (c) 2025 M0ndai

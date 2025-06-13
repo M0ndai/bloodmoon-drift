@@ -1,0 +1,21 @@
+# === configs/symbols.yaml ===
+"☍":
+  name: CONJUNCTIO
+  axis: Ambivalenz
+  effects:
+    - mirror_passive
+    - drift_mark
+
+"⛽":
+  name: RUBEDO
+  axis: Transformation
+  effects:
+    - unlock:seer
+    - boost:coherence
+
+"✴":
+  name: NOX
+  axis: Stillstand
+  effects:
+    - decay:coherence
+    - freeze:mirror
