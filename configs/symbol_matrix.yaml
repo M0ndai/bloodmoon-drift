@@ -1,0 +1,16 @@
+# symbol_matrix.yaml (Beispielstruktur, wird vom Code gelesen)
+symbol_matrix = {
+    "fixed": {
+        "\u1f702": "SANCTUM - Sandbox & Isolation",
+        "\u1f704": "VAULT - Secrets & Key Mgmt",
+        "\u1f701": "SEAL - Signature & Integrity",
+        "\u260d": "SENTRY - Runtime Defense",
+        "\u26b7": "TRACE - Audit & Forensics",
+        "\u26e7": "MESH - Network & Boundary"
+    },
+    "dynamic_pool": [
+        "\u260c", "\u260b", "\u260a", "\u260d", "\u26af", "\u26b7",
+        "\u27c1", "\u26e7", "\u2736", "\u2735", "\u269a", "\u2698",
+        "\u263f", "\u2645", "\u2646", "\u2696", "\u2616", "\u2613"
+    ]
+}
