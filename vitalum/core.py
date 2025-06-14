@@ -4,6 +4,9 @@ from pathlib import Path
 import json
 from datetime import datetime, timezone
 from typing import TypedDict, Optional
+from modules.mirror_horizon import analyze_longterm, load_horizon
+
+
 
 # TypedDict für den Default-Zustand
 class VitalState(TypedDict):
@@ -47,3 +50,9 @@ def update_zone(zone: str, status: Optional[str] = None) -> None:
     state["pulse"].append(entry)
     state["last_commit"] = datetime.now(timezone.utc).isoformat()
     STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
+def get_state() -> dict:
+    """
+    Liefert den Rohzustand für ascii_map (bisher load_horizon()).
+    """
+    return load_horizon()

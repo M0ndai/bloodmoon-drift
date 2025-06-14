@@ -1,31 +1,20 @@
-# === scripts/drift.py ===
+#!/usr/bin/env python3
+from events.event_store import write_event, read_events
+from modules.sigil_drift_plot import plot_drift
+from vitalum.gradient_engine import update_state, load_state
 
-from events.event_store import read_events
-from vitalum.core import get_state, add_pulse
-from datetime import datetime, timedelta
-import matplotlib.pyplot as plt
-
-
-def calculate_entropy():
+def add_pulse():
+    write_event({"type": "pulse"})
     events = read_events()
-    recent = [e for e in events if e.get("type") == "ritual"]
-    unique = len(set(e["symbol"] for e in recent[-20:] if "symbol" in e))
-    return max(0, 20 - unique)  # simple inverse entropy proxy
+    # Beispiel-Berechnung, hier anpassen
+    drift_score = len(events) / 100.0
+    delta = update_state(drift_score)
+    return delta
 
+def main():
+    delta = add_pulse()
+    print(f"Drift Δ∇V = {delta}")
+    plot_drift()
 
-def plot_drift():
-    state = get_state()
-    pulse = state.get("pulse", [])
-    if not pulse:
-        print("No pulse data.")
-        return
-
-    times = [datetime.fromisoformat(ts) for ts in pulse]
-    diffs = [(t2 - t1).total_seconds() / 60 for t1, t2 in zip(times, times[1:])]
-
-    plt.plot(diffs, marker="o")
-    plt.title("Drift Pulse Intervals (minutes)")
-    plt.xlabel("Event Index")
-    plt.ylabel("Interval")
-    plt.grid(True)
-    plt.show()
+if __name__ == "__main__":
+    main()

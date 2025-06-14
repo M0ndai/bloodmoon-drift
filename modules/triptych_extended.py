@@ -2,7 +2,7 @@
 
 from typing import TypedDict, Sequence, Dict, Any
 from .telemetry_collector import log_event
-from .gradient_engine import DriftState, load_state
+from ..vitalum.gradient_engine import DriftState, load_state
 from .threshold_manager import ThresholdConfig, get_thresholds
 from .symbolic_registry import ResponseOption, ResponseRegistry, load_responses
 

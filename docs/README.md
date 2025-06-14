@@ -1,11 +1,10 @@
 # BlutMond · Drift
 
-Reflexives Symbolsystem zur Selbstvermessung durch Verhalten, Bedeutung und Transformation.
+**Reflexives Symbolsystem zur Selbstvermessung durch Verhalten, Bedeutung und Transformation.**
 
 ---
 
 ✨ **Zweck**
-
 Dieses Projekt ist kein bloßes Tool. Es ist eine Umgebung. Ein Ritual. Eine Schleife.
 Du gibst Symbole ein – und bekommst Bewegung zurück. Du bewegst dich – und das System antwortet.
 
