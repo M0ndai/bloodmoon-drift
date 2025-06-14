@@ -1,0 +1,5 @@
+# Steuerung der Drifts-Berechnung und Entropiekurve
+drift:
+  mode: adaptive         # ‚fixed‘ | ‚adaptive‘
+  seed_entropy: true     # Zufallseinfluss in Seed-Bildung
+  max_delta: 1.0         # Maximale Delta-Erzeugung pro Zyklus

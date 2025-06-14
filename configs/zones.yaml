@@ -1,0 +1,11 @@
+# Metadaten zu den Zonen
+zones:
+  rift_core:
+    symbol: ⛧
+    description: "Bruchzone der kreativen Emergenz"
+  echo_static:
+    symbol: ☍
+    description: "Zone des Nachhalls und Statik"
+  neutral_zone:
+    symbol: 🜛
+    description: "Grundlegende, nicht getriggerte Zone"

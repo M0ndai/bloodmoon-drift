@@ -1,0 +1,4 @@
+# Schwellenwerte für Heat-Layer und Übergangszellen
+rift_core: 5.0       # intensive Emergenz-Zone
+echo_static: 3.5     # Zone des Nachhalls
+neutral_zone: 1.0    # Basiszone für geringe Intensitäten

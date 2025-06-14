@@ -1,0 +1,79 @@
+/* manifest_dashboard.css */
+
+/* Global Styles */
+:root {
+  --background: #1e1e1e;
+  --foreground: #d4d4d4;
+  --accent: #569cd6;
+  --highlight: #264f78;
+  --error: #f44747;
+  --success: #608b4e;
+}
+
+App {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Header & Footer */
+Header, Footer {
+  background: var(--highlight);
+  color: var(--foreground);
+}
+
+/* Layout */
+Horizontal {
+  height: 1fr;
+}
+
+Vertical {
+  height: 1fr;
+}
+
+/* ConfigTree */
+ConfigTree {
+  width: 30%;
+  border: heavy var(--accent);
+  padding: 1 1;
+}
+
+ConfigTree > .tree-node--selected {
+  background: var(--highlight);
+  color: var(--foreground);
+}
+
+/* Editor */
+#editor {
+  background: #252526;
+  color: var(--foreground);
+  border: heavy var(--accent);
+  padding: 1 1;
+  overflow: auto;
+}
+
+/* Buttons */
+Button {
+  background: var(--accent);
+  color: var(--background);
+  border: round var(--accent);
+  padding: 0 1;
+}
+
+Button:hover {
+  background: var(--highlight);
+}
+
+#save_btn {
+  margin-top: 1;
+  width: 100%;
+}
+
+/* Status Messages */
+Footer .status {
+  color: var(--success);
+}
+
+/* Scrollbars */
+ScrollView, Editor ScrollView {
+  scrollbar-color: var(--accent) var(--background);
+}

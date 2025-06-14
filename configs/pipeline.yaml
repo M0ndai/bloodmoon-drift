@@ -1,0 +1,20 @@
+# Chronos-Hebel und Automatisierungs-Sigils
+chronos:
+  default_timer: 25m     # Standard-Session-Länge
+  slots:
+    - name: focus
+      duration: 25m
+    - name: extended
+      duration: 52m
+    - name: deep
+      duration: 90m
+automation:
+  sigil: "⏳_🩸_🜏([t],[→])"
+  schedule:
+    - cron: '*/2 * * * *'   # alle 2 Stunden automatische Tasks
+delegation:
+  channel: "#delegation-sigil"
+  template: |
+    Titel: [DELEGATION_SIGIL] {title}
+    Beschreibung: {description}
+    Deadline: {deadline}
